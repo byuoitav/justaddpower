@@ -172,8 +172,8 @@ func (j *JustAddPowerReciever) getTransmissionChannelforAddress(address string) 
 	return transmissionChannel, nil
 }
 
-// GetAudioVideoInputs returns the current input
-func (j *JustAddPowerReciever) GetAudioVideoInputs(ctx context.Context) (map[string]string, error) {
+// AudioVideoInputs returns the current input
+func (j *JustAddPowerReciever) AudioVideoInputs(ctx context.Context) (map[string]string, error) {
 	toReturn := make(map[string]string)
 
 	ipAddress, err := net.ResolveIPAddr("ip", j.Address)
@@ -246,8 +246,8 @@ func (j *JustAddPowerReciever) SetAudioVideoInput(ctx context.Context, output, i
 	return nil
 }
 
-// GetInfo returns an info struct
-func (j *JustAddPowerReciever) GetInfo(ctx context.Context) (interface{}, error) {
+// Info returns an info struct
+func (j *JustAddPowerReciever) Info(ctx context.Context) (interface{}, error) {
 	var details Info
 
 	addr, e := net.LookupAddr(j.Address)
