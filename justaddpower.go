@@ -281,3 +281,12 @@ func (j *JustAddPowerReciever) Info(ctx context.Context) (interface{}, error) {
 
 	return details, nil
 }
+
+func (j *JustAddPowerReciever) Healthy(ctx context.Context) error {
+	_, err := j.AudioVideoInputs(ctx)
+	if err != nil {
+		return fmt.Errorf("unable to get input (not healthy): %s", err)
+	}
+
+	return nil
+}
